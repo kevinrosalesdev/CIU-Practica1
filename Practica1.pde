@@ -25,47 +25,72 @@ import processing.sound.*;
 //  }
 //}
 
-int px, py;
-int vx, vy;
-int jx, jy;
-//Soundfile sound;
+int px, py, vx, vy, jx1, jy1, jx2, jy2;
+Sound sound;
 
 void setup(){
   size(500,500);
   fill(128);
   noStroke();
+  //sound = new SoundFile("...");
+  setBallParameters();
+  setPlatformsParameters();
+}
+
+void setBallParameters(){
   px=width/2;
   py=height/2;
-  int leftOrRight = int(random(2));
-  if(leftOrRight == 1){
-    vx=(-1)*int(random(5)) + 1;
-  }else{
-    vx=int(random(5)) + 1;
-  }
+  vx=decideSide();
   vy=int(random(5));
-  jx=(int)(width*0.9);
-  jy=height/2;
-  //sound = new SoundFile("...");
+}
+
+void setPlatformsParameters(){
+  jx1=(int)(width*0.1);
+  jy1=height/2;
+  
+  jx2=(int)(width*0.9);
+  jy2=height/2;
+}
+
+int decideSide(){
+  if(int(random(2)) == 1){
+    return (-1)*int(random(5)) - 1;
+  }else{
+    return int(random(5)) + 1;
+  }
 }
 
 void draw(){
   background(0);
   ellipse(px,py,20,20);
-  rect(jx,mouseY,20,40);
-  jy=mouseY;
+  rect(width/2, 0, 1, height);
+  rect(jx1,mouseY,10,70);
+  rect(jx2,mouseY,10,70);
+  jy1=mouseY;
+  jy2=mouseY;
+  updateBall();
+}
+
+void updateBall(){
   px=px+vx;
   py=py+vy;
+  bounceBall();
+}
+
+void bounceBall(){
   if(px > width){
-    println("Has perdido");
+    println("Player 2 lost!");
     exit();
   }
   if(px < 0){
-    vx=-vx;
+    println("Player 1 lost!");
+    exit();
   }
   if(py > height || py < 0){
     vy=-vy;
   }
-  if(px <= jx+20 && px >= jx && py <= jy+40 && py >= jy){
+  if((px <= jx2+10 && px >= jx2 && py <= jy2+70 && py >= jy2) ||
+    (px >= jx1-10 && px <= jx1 && py <= jy1+70 && py >= jy1)){
     vx=-vx;
     vy=-vy;
   }
