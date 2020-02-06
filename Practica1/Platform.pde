@@ -1,13 +1,15 @@
 class Platform {
-  int jx, jy;
+  int jx, jy, pwidth, pheight;
 
-  Platform(float x) {
+  Platform(float x, int pwidth, int pheight) {
     this.jx=(int)(width*x);
     this.jy=height/2;
+    this.pwidth=pwidth;
+    this.pheight=pheight;
   }
 
   void draw() {
-    rect(jx, mouseY, 10, 70);
+    rect(jx, mouseY, pwidth, pheight);
     jy=mouseY;
   }
 }

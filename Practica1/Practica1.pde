@@ -9,13 +9,14 @@ Sound sound;
 void setup() {
   //sound = new SoundFile("...");
   surface.setTitle("Pong");
-  size(500, 500);
+  size(750, 500);
   fill(128);
   noStroke();
-  p1 = new Platform(0.1);
-  p2 = new Platform(0.9);
-  ball = new Ball(1.05);
-  controller = new Controller(ball, p1, p2);
+  textSize(70);
+  p1 = new Platform(0.1, 10, 70);
+  p2 = new Platform(0.9, 10, 70);
+  ball = new Ball(1.05, 20, 20);
+  controller = new Controller(ball, p1, p2, 0.4, 0.55);
 }
 
 void draw() {
@@ -24,5 +25,9 @@ void draw() {
   ball.draw();
   p1.draw();
   p2.draw();
-  if (!controller.updateBall()) setup();
+  controller.updateScore();
+  if (!controller.updateBall()){
+    ball = new Ball(1.05, 20, 20);
+    controller.setBall(ball);
+  }
 }
