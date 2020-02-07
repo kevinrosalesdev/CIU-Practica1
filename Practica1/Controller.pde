@@ -1,5 +1,3 @@
-import processing.sound.*;
-
 class Controller {
 
   Ball ball;
@@ -54,17 +52,16 @@ class Controller {
 
     int crashedSide = getCrashedSide();
     if (crashedSide == 1) {
-      ball.vy = 0.09*(ball.py-p1.jy)-3.0000;
+      ball.vy = 0.09*(ball.py-p1.jy)-3;
       bounceEffectFile.play();
     }else if (crashedSide == 2) {
-      ball.vy = 0.09*(ball.py-p2.jy)-3.0000;
+      ball.vy = 0.09*(ball.py-p2.jy)-3;
       bounceEffectFile.play();
     }
     if (crashedSide != 0){
       if (abs(ball.vx) <= 8) ball.vx = -ball.vx*ball.dx;
       else ball.vx = -ball.vx;
     }
-
     return true;
   }
 
@@ -73,4 +70,28 @@ class Controller {
     if (ball.px >= p2.jx && ball.px <= p2.jx+p2.pwidth && ball.py >= p2.jy && ball.py <= p2.jy+p2.pheight) return 2;
     return 0;
   }
+  
+  void updateKeyStatus(int keyCode, boolean newStatus){
+    if (keyCode == 87) p1.isUpPressed = newStatus;
+    if (keyCode == 83) p1.isDownPressed = newStatus;
+    
+    if (keyCode == 38) p2.isUpPressed = newStatus;
+    if (keyCode == 40) p2.isDownPressed = newStatus;
+  }
+  
+  void updatePlatforms(float speed){
+    if (p1.isUpPressed && p1.jy - int(speed*height) >= 0) p1.jy = p1.jy - int(speed*height);
+    if (p1.isDownPressed && p1.jy + p1.pheight + int(speed*height) <= height) p1.jy = p1.jy + int(speed*height);
+    
+    if (p2.isUpPressed && p2.jy - int(speed*height) >= 0) p2.jy = p2.jy - int(speed*height);
+    if (p2.isDownPressed && p2.jy + p2.pheight + int(speed*height) <= height) p2.jy = p2.jy + int(speed*height);
+    
+    p1.updateDraw();
+    p2.updateDraw();
+  }
+  
+  
+  
+  
+  
 }

@@ -22,12 +22,19 @@ void setup() {
 void draw() {
   background(0);
   rect(width/2, 0, 1, height);
-  ball.draw();
-  p1.draw();
-  p2.draw();
-  controller.updateScore();
+  ball.updateDraw();
+  controller.updateScore();;
+  controller.updatePlatforms(0.02);
   if (!controller.updateBall()){
     ball = new Ball(1.05, 20, 20);
     controller.setBall(ball);
   }
+}
+
+void keyPressed(){
+  controller.updateKeyStatus(keyCode, true);
+}
+
+void keyReleased(){
+  controller.updateKeyStatus(keyCode, false);
 }

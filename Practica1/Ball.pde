@@ -18,7 +18,7 @@ class Ball {
     else return 2;
   }
   
-  void draw(){
+  void updateDraw(){
     ellipse(px,py,bwidth,bheight);
   }
 }
