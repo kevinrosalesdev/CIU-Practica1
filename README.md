@@ -83,11 +83,7 @@ Para lograr este efecto, se ha programado el movimiento para que:
 
 - **Al chocar con una plataforma, se produce la siguiente fórmula** para calcular la nueva trayectoria:
 
-  
-
-$$
-`ball.vy = 0.09*(ball.py-p.jy)-3`;
-$$
+`ball.vy = 0.09*(ball.py-p.jy)-3`
 
 Fórmula 1: Cálculo de nueva trayectoria
 
