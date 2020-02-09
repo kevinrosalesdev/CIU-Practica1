@@ -35,13 +35,11 @@ class Controller {
 
   boolean bounceBall() {
     if (ball.px > width) {
-      println("Player 2 lost!");
       pointsP1++;
       ohEffectFile.play();
       return false;
     }
     if (ball.px < 0) {
-      println("Player 1 lost!");
       pointsP2++;
       ohEffectFile.play();
       return false;
@@ -89,9 +87,4 @@ class Controller {
     p1.updateDraw();
     p2.updateDraw();
   }
-  
-  
-  
-  
-  
 }

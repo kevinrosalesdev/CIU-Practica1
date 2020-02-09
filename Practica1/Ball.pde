@@ -6,8 +6,8 @@ class Ball {
   Ball(float dx, int bwidth, int bheight) {
     this.px=width/2;
     this.py=height/2;
-    this.vx=random(1,1.5)*decideSide();
-    this.vy=random(1,1.5)*decideSide();
+    this.vx=random(0.5,1.5)*decideSide();
+    this.vy=random(0.5,1.5)*decideSide();
     this.dx=dx;
     this.bwidth=bwidth;
     this.bheight=bheight;
