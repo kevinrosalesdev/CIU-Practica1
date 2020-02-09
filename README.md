@@ -24,7 +24,7 @@ Kevin David Rosales Santana - <kevin.rosales101@alu.ulpgc.es>
       
       - 3.2.4 [Aleatoriedad](#324-aleatoriedad)
       
-      - 3.2.5 [Velocidad](325-velocidad) 
+      - 3.2.5 [Velocidad](#325-velocidad) 
       
       - 3.2.6 [Menú](#326-menú)
       
