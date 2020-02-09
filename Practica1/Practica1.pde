@@ -17,12 +17,12 @@ void setup() {
   bounceWallEffectFile = new SoundFile(this, "8-bit-bounce.wav");
   ohEffectFile = new SoundFile(this, "8-bit-uh-oh-sound.wav");
   PFont font = loadFont("OCRAExtended-48.vlw");
-  noLoop();
   p1 = new Platform(0.1, 10, 70);
   p2 = new Platform(0.9, 10, 70);
   ball = new Ball(1.05, 20, 20);
   controller = new Controller(ball, p1, p2, 0.4, 0.545);
   drawMenu(font);
+  noLoop();
   
   //ficherogif = new GifMaker(this, "animation.gif");
   //ficherogif.setRepeat(0);
