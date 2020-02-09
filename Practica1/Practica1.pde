@@ -6,20 +6,22 @@ Platform p1, p2;
 Controller controller;
 //GifMaker ficherogif;
 //int frameCounter;
+SoundFile bounceEffectFile, bounceWallEffectFile, ohEffectFile;
 boolean menuMode = true;
 
 void setup() {
   surface.setTitle("Pong");
   background(0);
   size(750, 500);
-  SoundFile bounceEffectFile = new SoundFile(this, "ping-pong-ball-hit.wav");
-  SoundFile ohEffectFile = new SoundFile(this, "8-bit-uh-oh-sound.wav");
+  bounceEffectFile = new SoundFile(this, "ping-pong-ball-hit.wav");
+  bounceWallEffectFile = new SoundFile(this, "8-bit-bounce.wav");
+  ohEffectFile = new SoundFile(this, "8-bit-uh-oh-sound.wav");
   PFont font = loadFont("OCRAExtended-48.vlw");
   noLoop();
   p1 = new Platform(0.1, 10, 70);
   p2 = new Platform(0.9, 10, 70);
   ball = new Ball(1.05, 20, 20);
-  controller = new Controller(ball, p1, p2, 0.4, 0.545, bounceEffectFile, ohEffectFile);
+  controller = new Controller(ball, p1, p2, 0.4, 0.545);
   drawMenu(font);
   
   //ficherogif = new GifMaker(this, "animation.gif");
@@ -97,4 +99,17 @@ void keyPressed(){
 
 void keyReleased(){
   controller.updateKeyStatus(keyCode, false);
+}
+
+
+void ohEffectPlay(){
+  ohEffectFile.play();
+}
+
+void bounceEffectPlay(){
+  bounceEffectFile.play();
+}
+
+void bounceWallEffectPlay(){
+  bounceWallEffectFile.play();
 }

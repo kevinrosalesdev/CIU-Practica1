@@ -4,9 +4,8 @@ class Controller {
   Platform p1, p2;
   int pointsP1, pointsP2;
   float scoreLocationP1, scoreLocationP2;
-  SoundFile bounceEffectFile, ohEffectFile;
 
-  Controller(Ball ball, Platform p1, Platform p2, float scoreLocationP1, float scoreLocationP2, SoundFile bounceEffectFile, SoundFile ohEffectFile) {
+  Controller(Ball ball, Platform p1, Platform p2, float scoreLocationP1, float scoreLocationP2) {
     this.ball = ball;
     this.p1 = p1;
     this.p2 = p2;
@@ -14,8 +13,6 @@ class Controller {
     this.scoreLocationP2 = scoreLocationP2;
     this.pointsP1 = 0;
     this.pointsP2 = 0;
-    this.bounceEffectFile=bounceEffectFile;
-    this.ohEffectFile=ohEffectFile;
   }
 
   void updateScore() {
@@ -36,25 +33,26 @@ class Controller {
   boolean bounceBall() {
     if (ball.px > width) {
       pointsP1++;
-      ohEffectFile.play();
+      thread("ohEffectPlay");
       return false;
     }
     if (ball.px < 0) {
       pointsP2++;
-      ohEffectFile.play();
+      thread("ohEffectPlay");
       return false;
     }
     if (ball.py > height || ball.py < 0) {
       ball.vy=-ball.vy;
+      thread("bounceWallEffectPlay");
     }
 
     int crashedSide = getCrashedSide();
     if (crashedSide == 1) {
       ball.vy = 0.09*(ball.py-p1.jy)-3;
-      bounceEffectFile.play();
+      thread("bounceEffectPlay");
     }else if (crashedSide == 2) {
       ball.vy = 0.09*(ball.py-p2.jy)-3;
-      bounceEffectFile.play();
+      thread("bounceEffectPlay");
     }
     if (crashedSide != 0){
       if (abs(ball.vx) <= 8) ball.vx = -ball.vx*ball.dx;
