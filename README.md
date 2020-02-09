@@ -16,17 +16,17 @@ Kevin David Rosales Santana - <kevin.rosales101@alu.ulpgc.es>
    
    3.2 [Decisiones en el desarrollo](#32-decisiones-en-el-desarrollo)
    
-      3.2.1 [Física de la pelota](#321-física-de-la-pelota)
+      - 3.2.1 [Física de la pelota](#321-física-de-la-pelota)
       
-      3.2.2 [Sonido](#322-sonido)
+      - 3.2.2 [Sonido](#322-sonido)
       
-      3.2.3 [Gestión de eventos del teclado](#323-gestión-de-eventos-del-teclado)
+      - 3.2.3 [Gestión de eventos del teclado](#323-gestión-de-eventos-del-teclado)
       
-      3.2.4 [Aleatoriedad](#324-aleatoriedad)
+      - 3.2.4 [Aleatoriedad](#324-aleatoriedad)
       
-      3.2.5 [Velocidad](325-velocidad) 
+      - 3.2.5 [Velocidad](325-velocidad) 
       
-      3.2.6 [Menú](#326-menú)
+      - 3.2.6 [Menú](#326-menú)
       
 4. [Conclusión](#4-conclusión)
 5. [Ejecución del Proyecto](#5-ejecución-del-proyecto)
