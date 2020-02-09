@@ -11,15 +11,24 @@ Kevin David Rosales Santana - <kevin.rosales101@alu.ulpgc.es>
 1. [Introducción](#1-introducción)
 2. [Muestra del resultado](#2-muestra-del-resultado)
 3. [Descripción del trabajo realizado](#3-descripción-del-trabajo-realizado)
+
    3.1 [Estructura de ficheros](#31-estructura-de-ficheros)
+   
    3.2 [Decisiones en el desarrollo](#32-decisiones-en-el-desarrollo)
-      3.2.1 [Física de la pelota](#321-Física de la pelota)
+   
+      3.2.1 [Física de la pelota](#321-física-de-la-pelota)
+      
       3.2.2 [Sonido](#322-sonido)
+      
       3.2.3 [Gestión de eventos del teclado](#323-gestión-de-eventos-del-teclado)
+      
       3.2.4 [Aleatoriedad](#324-aleatoriedad)
+      
       3.2.5 [Velocidad](325-velocidad) 
+      
       3.2.6 [Menú](#326-menú)
-4. [Conclusión](#4-conclusiones)
+      
+4. [Conclusión](#4-conclusión)
 5. [Ejecución del Proyecto](#5-ejecución-del-proyecto)
 6. [Referencias y herramientas utilizadas](#6-referencias-y-herramientas-utilizadas)
 
@@ -41,7 +50,8 @@ Por tanto, en este repositorio se tiene una implementación de este videojuego q
 
 ![Muestra del resultado](Practica1/media/animation.gif)
 
-<p style="text-align: center;">Figura 1: Muestra del resultado</p>
+Figura 1: Muestra del resultado
+
 ### 3. Descripción del trabajo realizado
 
 #### 3.1 Estructura de ficheros
@@ -55,7 +65,8 @@ Para realizar este trabajo, se han creado estos cuatro ficheros (presentes en la
 | *Platform.pde*   | Clase **modelo** que representa a un objeto *plataforma*.    |
 | *Ball.pde*       | Clase **modelo** que representa a un objeto *pelota*.        |
 
-<p style="text-align: center;">Tabla 1: Estructura de ficheros</p>
+Tabla 1: Estructura de ficheros
+
 #### 3.2 Decisiones en el desarrollo
 
 A la hora de realizar el **Pong** se ha tenido que tomar una serie de decisiones respecto al desarrollo del proyecto. A continuación, se listarán dichas decisiones:
@@ -75,25 +86,23 @@ Para lograr este efecto, se ha programado el movimiento para que:
   
 
 $$
-ball_{vy} = 0.09*(ball_{py}-p_{jy})-3;
+`ball.vy = 0.09*(ball.py-p.jy)-3`;
 $$
 
-<p style="text-align: center;">Fórmula 1: Cálculo de nueva trayectoria</p>
-Teniendo en cuenta que:
-$$
-(ball_{py}-p_{jy})
-$$
+Fórmula 1: Cálculo de nueva trayectoria
 
-Es la distancia de la pelota hasta el borde superior de la plataforma y por tanto su valor se encuentra en [0,70] (dado a que 70 es la altura de la plataforma), se trata de una función que representada resulta así:
+Teniendo en cuenta que `(ball.py-p.jy)` es la distancia de la pelota hasta el borde superior de la plataforma y por tanto su valor se encuentra en [0,70] (dado a que 70 es la altura de la plataforma), se trata de una función que representada resulta así:
 
 ![función](Practica1/media/function.png)
 
-<p style="text-align: center;">Figura 2: Representación de la función</p>
+Figura 2: Representación de la función
+
 Con esto se consigue que la componente que define la desviación `vy` de la pelota, consiga un valor entre [0,3] tras su rebote **dependiendo de dónde haya chocado con la plataforma**. A continuación se muestran unos ejemplos:
 
 ![ejemplos](Practica1/media/examples.png)
 
-<p style="text-align: center;">Figura 3: Ejemplos de rebote</p>
+Figura 3: Ejemplos de rebote
+
 ##### 3.2.2 Sonido
 
 Se han implementado un total de **3 efectos de sonido** procedentes de [freesound (Referencia 1)](#6-referencias-y-herramientas-utilizadas): 
@@ -126,7 +135,8 @@ Como aportación propia, se ha desarrollado un menú previo al juego que introdu
 
 ![ejemplos](Practica1/media/menu.png)
 
-<p style="text-align: center;">Figura 4: Menú inicial previo al juego</p>
+Figura 4: Menú inicial previo al juego
+
 Para realizar este menú, se han seguido las indicaciones de la [referencia de Processing (Referencia 2)](#6-referencias-y-herramientas-utilizadas). Por ello, se realiza un `noLoop()` al ejecutar el `setup()`, evitando que se ejecute en bucle el `draw()`.  Además, se dibuja el menú que se puede observar en la *Figura 4*.
 
 Al pulsar `ENTER`, se llama a `loop()` (reanudando el bucle del `draw()`) y se desactiva el "Modo menú" que no permitía acceder al contenido del `draw()`. 
