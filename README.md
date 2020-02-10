@@ -48,9 +48,10 @@ Por tanto, en este repositorio se tiene una implementación de este videojuego q
 
 ### 2. Muestra del resultado
 
-![Muestra del resultado](Practica1/media/animation.gif)
-
-Figura 1: Muestra del resultado
+<div align="center">
+   <img src="Practica1/media/animation.gif" alt="animation"></img>
+   <p>Figura 1: Muestra del resultado</p>
+</div>
 
 ### 3. Descripción del trabajo realizado
 
