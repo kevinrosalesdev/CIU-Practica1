@@ -1,5 +1,7 @@
 # Práctica 1 - Pong
 
+![version](https://img.shields.io/badge/version-1.0-green)
+
 ## Memoria
 
 ### Autor
@@ -90,15 +92,17 @@ Fórmula 1: Cálculo de nueva trayectoria
 
 Teniendo en cuenta que `(ball.py-p.jy)` es la distancia de la pelota hasta el borde superior de la plataforma y por tanto su valor se encuentra en [0,70] (dado a que 70 es la altura de la plataforma), se trata de una función que representada resulta así:
 
-![función](Practica1/media/function.png)
-
-Figura 2: Representación de la función
+<div align="center">
+   <img src="Practica1/media/function.png" alt="function"></img>
+   <p>Figura 2: Representación de la función</p>
+</div>
 
 Con esto se consigue que la componente que define la desviación `vy` de la pelota, consiga un valor entre [0,3] tras su rebote **dependiendo de dónde haya chocado con la plataforma**. A continuación se muestran unos ejemplos:
 
-![ejemplos](Practica1/media/examples.png)
-
-Figura 3: Ejemplos de rebote
+<div align="center">
+   <img src="Practica1/media/examples.png" alt="examples"></img>
+   <p>Figura 3: Ejemplos de rebote</p>
+</div>
 
 ##### 3.2.2 Sonido
 
@@ -130,9 +134,10 @@ Sin embargo, se debe tener en cuenta que la velocidad debe tener un límite para
 
 Como aportación propia, se ha desarrollado un menú previo al juego que introduce a los usuarios al **Pong** y les informa sobre sus **controles**:
 
-![ejemplos](Practica1/media/menu.png)
-
-Figura 4: Menú inicial previo al juego
+<div align="center">
+   <img src="Practica1/media/menu.png" alt="menu"></img>
+   <p>Figura 4: Menú inicial previo al juego</p>
+</div>
 
 Para realizar este menú, se han seguido las indicaciones de la [referencia de Processing (Referencia 2)](#6-referencias-y-herramientas-utilizadas). Por ello, se realiza un `noLoop()` al ejecutar el `setup()`, evitando que se ejecute en bucle el `draw()`.  Además, se dibuja el menú que se puede observar en la *Figura 4*.
 
