@@ -67,7 +67,7 @@ class Controller {
     return 0;
   }
   
-  void updateKeyStatus(char key, boolean newStatus){
+  void updateKeyStatus(boolean newStatus){
     if (key == 'w' || key == 'W') p1.isUpPressed = newStatus;
     if (key == 's' || key == 'S') p1.isDownPressed = newStatus;
     
