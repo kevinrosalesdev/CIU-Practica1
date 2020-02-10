@@ -94,13 +94,12 @@ void keyPressed(){
     loop();
     menuMode = false;  
   }
-  controller.updateKeyStatus(keyCode, true);
+  controller.updateKeyStatus(key, true);
 }
 
 void keyReleased(){
-  controller.updateKeyStatus(keyCode, false);
+  controller.updateKeyStatus(key, false);
 }
-
 
 void ohEffectPlay(){
   ohEffectFile.play();

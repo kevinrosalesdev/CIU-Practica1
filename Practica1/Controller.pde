@@ -67,12 +67,14 @@ class Controller {
     return 0;
   }
   
-  void updateKeyStatus(int keyCode, boolean newStatus){
-    if (keyCode == 87) p1.isUpPressed = newStatus;
-    if (keyCode == 83) p1.isDownPressed = newStatus;
+  void updateKeyStatus(char key, boolean newStatus){
+    if (key == 'w' || key == 'W') p1.isUpPressed = newStatus;
+    if (key == 's' || key == 'S') p1.isDownPressed = newStatus;
     
-    if (keyCode == 38) p2.isUpPressed = newStatus;
-    if (keyCode == 40) p2.isDownPressed = newStatus;
+    if (key == CODED){
+      if (keyCode == UP) p2.isUpPressed = newStatus;
+      if (keyCode == DOWN) p2.isDownPressed = newStatus;
+    }
   }
   
   void updatePlatforms(float speed){
