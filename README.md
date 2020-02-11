@@ -68,7 +68,9 @@ Para realizar este trabajo, se han creado estos cuatro ficheros (presentes en la
 | *Platform.pde*   | Clase **modelo** que representa a un objeto *plataforma*.    |
 | *Ball.pde*       | Clase **modelo** que representa a un objeto *pelota*.        |
 
-Tabla 1: Estructura de ficheros
+<div align="center">
+   <p>Tabla 1: Estructura de ficheros</p>
+</div>
 
 #### 3.2 Decisiones en el desarrollo
 
@@ -86,9 +88,10 @@ Para lograr este efecto, se ha programado el movimiento para que:
 
 - **Al chocar con una plataforma, se produce la siguiente fórmula** para calcular la nueva trayectoria:
 
-`ball.vy = 0.09*(ball.py-p.jy)-3`
-
-Fórmula 1: Cálculo de nueva trayectoria
+<div align="center">
+   <p>ball.vy = 0.09*(ball.py-p.jy)-3</p>
+   <p>Fórmula 1: Cálculo de nueva trayectoria</p>
+</div>
 
 Teniendo en cuenta que `(ball.py-p.jy)` es la distancia de la pelota hasta el borde superior de la plataforma y por tanto su valor se encuentra en [0,70] (dado a que 70 es la altura de la plataforma), se trata de una función que representada resulta así:
 
@@ -97,7 +100,7 @@ Teniendo en cuenta que `(ball.py-p.jy)` es la distancia de la pelota hasta el bo
    <p>Figura 2: Representación de la función</p>
 </div>
 
-Con esto se consigue que la componente que define la desviación `vy` de la pelota, consiga un valor entre [0,3] tras su rebote **dependiendo de dónde haya chocado con la plataforma**. A continuación se muestran unos ejemplos:
+Con esto se consigue que la componente que define la desviación `vy` de la pelota, consiga un valor entre [-3,3] tras su rebote **dependiendo de dónde haya chocado con la plataforma**. A continuación se muestran unos ejemplos:
 
 <div align="center">
    <img src="Practica1/media/examples.png" alt="examples"></img>
